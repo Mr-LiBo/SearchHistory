@@ -73,7 +73,7 @@
 
             <View style="@style/VerticalLineStyle" />
 
-            <cn.cnpp.searchhistory.ZFlowLayout
+            <com.libo.mylibrary.ZFlowLayout
                 android:id="@+id/keyword_fl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
 
             </RelativeLayout>
 
-            <cn.cnpp.searchhistory.ZFlowLayout
+            <com.libo.mylibrary.ZFlowLayout
                 android:id="@+id/history_fl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

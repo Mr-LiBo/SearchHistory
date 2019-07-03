@@ -1,15 +1,13 @@
-package cn.cnpp.searchhistory;
+package com.libo.mylibrary;
 
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 
-import java.util.ArrayList;
-
 /**
- * @author Administrator
- *         SharedPreferences使用工具类
+ * @author LiBo
+ * SharedPreferences使用工具类
  */
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 public class SPUtils {

@@ -1,4 +1,4 @@
-package cn.cnpp.searchhistory;
+package com.libo.mylibrary;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,7 +10,7 @@ import java.util.List;
 
 /*****************************
  * @Copyright(c) 2014-2018
- * @Author：dengyalan
+ * @Author：LiBo
  * @Date：2018/1/16
  * @Description：自定义搜索标签布局
  * @Version:v1.0.0
