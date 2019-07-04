@@ -104,8 +104,8 @@ public class SPUtils {
         SharedPreferences mysp = mContext.getSharedPreferences("search_history", 0);
         String old_text = mysp.getString("history", "");
         // 利用StringBuilder.append新增内容，逗号便于读取内容时用逗号拆分开
-        StringBuilder builder = new StringBuilder(old_text);
-        builder.append(keyword + ",");
+        StringBuilder builder = new StringBuilder(keyword+",");
+        builder.append(old_text);
 
         // 判断搜索内容是否已经存在于历史文件，已存在则不重复添加
         if (!old_text.contains(keyword + ",")) {
