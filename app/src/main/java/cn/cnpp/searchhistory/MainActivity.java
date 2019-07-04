@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     private void initHistory() {
         final String[] data = SPUtils.getInstance(this).getHistoryList();
         ViewGroup.MarginLayoutParams layoutParams = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(10, 10, 10, 10);
+        layoutParams.setMargins(15, 15, 15, 15);
         historyFl.removeAllViews();
         for (int i = 0; i < data.length; i++) {
             if (isNullorEmpty(data[i])) {
@@ -104,7 +104,9 @@ public class MainActivity extends AppCompatActivity {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    autoSearch.setText(data[j]);
+//                    autoSearch.setText(data[j]);
+                    SPUtils.getInstance(MainActivity.this).cleanHistory(data[j]);
+                    initHistory();
                 }
             });
         }
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initKeyword(final String[] keyword) {
         ViewGroup.MarginLayoutParams layoutParams = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(10, 10, 10, 10);
+        layoutParams.setMargins(15, 15, 15, 15);
         keywordFl.removeAllViews();
         for (int i = 0; i < keyword.length; i++) {
             final int j = i;
@@ -127,6 +129,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     autoSearch.setText(keyword[j]);
+                    SPUtils.getInstance(MainActivity.this).cleanHistory(autoSearch.getText().toString());
+
+
                 }
             });
         }

@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author LiBo
  * SharedPreferences使用工具类
@@ -134,5 +137,24 @@ public class SPUtils {
         SharedPreferences.Editor editor = sp.edit();
         editor.clear();
         editor.commit();
+    }
+
+    /**
+     * 清除搜索记录
+     */
+    public void cleanHistory(String keyword) {
+        // 获取搜索框信息
+        SharedPreferences mysp = mContext.getSharedPreferences("search_history", 0);
+        String old_text = mysp.getString("history", "");
+        String[] history_arr = old_text.split(",");
+        String temp = "";
+        for (int i = 0; i < history_arr.length; i++) {
+            if (!history_arr[i].equals(keyword)) {
+                temp += history_arr[i] + ",";
+            }
+        }
+        SharedPreferences.Editor myeditor = mysp.edit();
+        myeditor.putString("history", temp);
+        myeditor.commit();
     }
 }
