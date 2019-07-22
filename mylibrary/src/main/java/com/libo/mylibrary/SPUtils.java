@@ -120,6 +120,7 @@ public class SPUtils {
             myeditor.putString("history", builder.toString());
             myeditor.commit();
         }
+
     }
 
     public String[] getHistoryList() {
