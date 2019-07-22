@@ -107,8 +107,15 @@ public class SPUtils {
         StringBuilder builder = new StringBuilder(keyword+",");
         builder.append(old_text);
 
-        // 判断搜索内容是否已经存在于历史文件，已存在则不重复添加
-        if (!old_text.contains(keyword + ",")) {
+        String[] history_arr = old_text.split(",");
+        boolean bl = true;
+        for (int i = 0; i < history_arr.length; i++) {
+            if (history_arr[i].equals(keyword)) {
+                bl= false;
+            }
+        }
+        if(bl){
+            // 判断搜索内容是否已经存在于历史文件，已存在则不重复添加
             SharedPreferences.Editor myeditor = mysp.edit();
             myeditor.putString("history", builder.toString());
             myeditor.commit();
